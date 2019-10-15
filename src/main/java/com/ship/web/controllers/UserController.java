@@ -27,7 +27,7 @@ public class UserController {
 	@GetMapping("/info")
 	public String findUserByUid(@RequestParam("uid") String uid,
 			@RequestParam("upw") String upw) {
-		
+		//
 		return "index";
 	}
 
