@@ -3,6 +3,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+
   </head>
 <head>
 	<meta charset="UTF-8" />
@@ -36,7 +37,7 @@
     <link href="<%=application.getContextPath()%>/resources/css/signin.css" rel="stylesheet">
 </head>
 <body class="text-center">
-	<form class="form-signin">
+	<form id="form_join" class="form-signin">
 	  <img class="mb-4" src="<%=application.getContextPath()%>/resources/img/bootstrap-solid.svg" alt="" width="72" height="72">
 	  <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
 	  <label for="inputEmail" class="sr-only">Email address</label>
