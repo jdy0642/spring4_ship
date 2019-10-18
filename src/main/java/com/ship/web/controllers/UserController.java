@@ -32,10 +32,19 @@ public class UserController {
 	@PostMapping("/join")
 	public @ResponseBody Map<?,?> join(@RequestBody UserDTO user) {
 		Map<String,String> map = new HashMap<>();
-		logger.info("ajax가 보낸 아이디 비번{}",user.getuId()+","+user.getuPw());
+		logger.info("ajax1가 보낸 아이디 비번{}",user.getuId()+","+user.getuPw());
 		map.put("uId", user.getuId());
 		map.put("uPw", user.getuPw());
-		logger.info("map에 담긴 아이디와 비번{}", map.get("uId")+", "+map.get("uPw"));
+		logger.info("map1에 담긴 아이디와 비번{}", map.get("uId")+", "+map.get("uPw"));
+		return map;
+	}
+	@PostMapping("/login")
+	public @ResponseBody Map<?,?> login(@RequestBody UserDTO user) {
+		Map<String,String> map = new HashMap<>();
+		logger.info("ajax2가 보낸 아이디 비번{}",user.getuId()+","+user.getuPw());
+		map.put("uId", user.getuId());
+		map.put("uPw", user.getuPw());
+		logger.info("map2에 담긴 아이디와 비번{}", map.get("uId")+", "+map.get("uPw"));
 		return map;
 	}
 
