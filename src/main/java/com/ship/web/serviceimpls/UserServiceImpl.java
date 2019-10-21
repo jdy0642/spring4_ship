@@ -8,25 +8,23 @@ import com.ship.web.services.UserService;
 	@Service
 public class UserServiceImpl implements UserService{
 	@Autowired UserMapper userMapper;
-	
 	@Override
-	public boolean join(UserDTO param) {
-		return false;
+	public void join(UserDTO param) {
+		userMapper.insertUser(param);
+		return;
 	}
-
 	@Override
 	public UserDTO login(UserDTO param) {
-		return null;
+		return userMapper.selectUserById(param);
+		
 	}
-
 	@Override
 	public List<UserDTO> search(UserDTO param) {
 		return null;
 
 }
-
 	@Override
 	public int countUser() {
-		return userMapper.countUser();
+		return userMapper.getUser();
 	}
 }

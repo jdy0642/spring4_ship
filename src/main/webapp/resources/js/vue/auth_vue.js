@@ -92,15 +92,15 @@ auth_vue = {
 		'      <form class="needs-validation" novalidate="">'+
 		'        <div class="row">'+
 		'          <div class="col-md-6 mb-3">'+
-		'            <label for="uId">USER ID</label>'+
-		'            <input type="text" class="form-control" id="uId" placeholder="" value="" required="">'+
+		'            <label for="userid">USER ID</label>'+
+		'            <input type="text" class="form-control" id="uid" placeholder="" value="" required="">'+
 		'            <div class="invalid-feedback">'+
 		'              Valid first name is required.'+
 		'            </div>'+
 		'          </div>'+
 		'          <div class="col-md-6 mb-3">'+
-		'            <label for="uPw">PASSWORD</label>'+
-		'            <input type="text" class="form-control" id="uPw" placeholder="" value="" required="">'+
+		'            <label for="password">PASSWORD</label>'+
+		'            <input type="text" class="form-control" id="upw" placeholder="" value="" required="">'+
 		'            <div class="invalid-feedback">'+
 		'              Valid last name is required.'+
 		'            </div>'+
@@ -112,7 +112,7 @@ auth_vue = {
 		'            <div class="input-group-prepend">'+
 		'              <span class="input-group-text">@</span>'+
 		'            </div>'+
-		'            <input type="text" class="form-control" id="username" placeholder="Username" required="">'+
+		'            <input type="text" class="form-control" id="uname" placeholder="Username" required="">'+
 		'            <div class="invalid-feedback" style="width: 100%;">'+
 		'              Your username is required.'+
 		'            </div>'+
@@ -277,9 +277,9 @@ auth_vue = {
 			'    <img class="mb-4" src="'+x.img+'/bootstrap-solid.svg" alt="" width="72" height="72">'+
 			'    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>'+
 			'    <label for="inputEmail" class="sr-only">Email address</label>'+
-			'    <input type="text" id="uId" class="form-control" placeholder="id" required="" autofocus="">'+
+			'    <input type="text" id="uid" class="form-control" placeholder="id" required="" autofocus="">'+
 			'    <label for="inputPassword" class="sr-only">Password</label>'+
-			'    <input type="password" id="uPw" class="form-control" placeholder="Password" required="">'+
+			'    <input type="password" id="upw" class="form-control" placeholder="Password" required="">'+
 			'    <div class="checkbox mb-3">'+
 			'      <label>'+
 			'       <a id="a_go_join" href="#">Go Join</a> '+

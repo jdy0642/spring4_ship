@@ -34,7 +34,7 @@ auth = (()=>{
                 href: '#',
                 click: e=>{
                    e.preventDefault();
-                  let data = {uId : $('#uId').val(), uPw : $('#uPw').val()}
+                   let data = {uid : $('#uid').val(), upw : $('#upw').val(), uname: $('#uname').val()}
                   $.ajax({
                      url : _+'/user/join',
                      type : 'POST',
@@ -42,7 +42,7 @@ auth = (()=>{
                      data : JSON.stringify(data),
                      contentType : 'application/json',
                      success : d => {
-                        alert('ajax 성공 아이디: '+d.uId+', 성공비번: '+d.uPw)
+                        alert('ajax 성공 아이디: '+d.uid+', 성공비번: '+d.upw+d.uname)
                         login()
                         
                      },
@@ -70,18 +70,20 @@ auth = (()=>{
               click : e=>{
                  e.preventDefault()
                  alert('로그인 ');
-                 let data = {uId : $('#uId').val(), uPw : $('#uPw').val()}
+                 let data = {uid : $('#uid').val(), upw : $('#upw').val(), uname:$('#uname').val()}
                  $.ajax({
-                    url : _+'/user/login',
-                    type : 'POST',
-                    dataType : 'json',
-                    data : JSON.stringify(data),
-                    contentType : 'application/json',
-                    success : d =>{
-                       alert('로그인 성공!!')
+                    url: _+'/user/login',
+                    data:JSON.stringify(data),
+                    type:'POST',
+                    dataType: 'json',
+                    contentType: 'application/json',
+                    success :d => {
+                    	alert(d.uname+' 님 환영합니다')
+                    },
+                    error :e =>{
+                    	alert('로그인 실패')
                     }
                  })
-                 
               }
            }).addClass("btn btn-primary btn-lg btn-block")
            .appendTo('#btn_login')

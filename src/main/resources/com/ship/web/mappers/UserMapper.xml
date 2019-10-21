@@ -1,9 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper
-  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
 <mapper namespace="com.ship.web.mappers.UserMapper">
-   <select id="countUser" resultType="int">
-      SELECT COUNT(*) COUNT FROM USER
-   </select>
+    <resultMap type="com.ship.web.domains.UserDTO" id="usermap">
+        <id column="USER_ID" property="uid"/>
+        <result column="USER_PW" property="upw"/>
+        <result column="USER_NAME" property="uname"/>
+    </resultMap>
+
+    <select id="selectUserById" resultMap="usermap" parameterType="com.ship.web.domains.UserDTO" >
+        SELECT * FROM USER WHERE USER_ID LIKE #{uid}
+    </select>
+    
+    <insert id="insertUser" parameterType="com.ship.web.domains.UserDTO" >
+        INSERT INTO USER (USER_ID, USER_PW, USER_NAME) VALUES (
+            #{uid}, #{upw}, #{uname}
+        )
+    </insert>
+
 </mapper>
